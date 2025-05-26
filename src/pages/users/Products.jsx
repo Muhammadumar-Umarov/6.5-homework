@@ -1,10 +1,12 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const Products = () => {
   const [data, setData] = useState(null)
   const [error, setError] = useState(null)
   const [loading, setLoading] = useState(false)
+  const navigate = useNavigate()
 
   useEffect(() => {
     setLoading(true)
@@ -12,8 +14,6 @@ const Products = () => {
       .get("https://dummyjson.com/product")
       .then(res => {
         setData(res.data)
-        console.log(res.data);
-
       })
       .catch((err) => {
         setError(err)
@@ -45,15 +45,12 @@ const Products = () => {
               className="bg-gray-50 border border-gray-200 rounded-2xl shadow-sm hover:shadow-lg transition duration-300 overflow-hidden"
             >
               <div className="h-48 bg-gradient-to-br from-indigo-500 to-blue-600 flex items-center justify-center p-4">
-                <img
-                  src={product.images[0]}
-                  alt={`${product.firstName}`}
-                  className="w-full h-full  rounded-full  object-contain "
+                <img src={product.thumbnail} alt={`${product.firstName}`} onClick={()=> navigate(`/users/${product.id}`)} className="w-full h-full  rounded-full  object-contain "
                 />
               </div>
 
               <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 text-center mb-1">{product.title}</h3>
+                <h3 className="text-xl font-bold text-gray-900 text-center mb-1 line-clamp-1">{product.title}</h3>
                 <p className="text-sm text-gray-500 text-center italic mb-4">{product.category}</p>
 
                 <div className="space-y-2 text-sm text-gray-600">
