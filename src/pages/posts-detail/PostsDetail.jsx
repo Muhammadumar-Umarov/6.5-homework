@@ -21,7 +21,6 @@ const PostsDetails = () => {
       .finally(() => setLoading(false))
   }, [id])
 
-  // 🔄 Loading skeleton
   if (loading) {
     return (
       <div className="container mx-auto py-10 px-5 md:px-20 bg-[#f9f9ff] min-h-screen">
@@ -52,7 +51,6 @@ const PostsDetails = () => {
     )
   }
 
-  // ✅ Detail view
   return (
     <div className="container mx-auto py-10 px-5 md:px-20 bg-[#f9f9ff] min-h-screen">
       <div className="space-y-6">

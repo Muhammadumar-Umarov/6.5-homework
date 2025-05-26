@@ -25,17 +25,16 @@ const RecipeDetail = () => {
   return (
     <div className="container mx-auto py-10 px-5 md:px-20 bg-[#f9f9ff] min-h-screen">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start animate-pulse">
-        {/* Skeleton image */}
         <div>
           <div className="w-full max-w-md mx-auto h-[400px] bg-gray-300 rounded-xl shadow-md" />
         </div>
 
         <div className="space-y-5">
-          <div className="h-10 bg-gray-300 rounded w-3/4" /> {/* Name */}
-          <div className="h-6 bg-gray-300 rounded w-1/2" />  {/* Age */}
-          <div className="h-6 bg-gray-300 rounded w-1/3" />  {/* Gender */}
-          <div className="h-6 bg-gray-300 rounded w-2/3" />  {/* Email */}
-          <div className="h-6 bg-gray-300 rounded w-1/2" />  {/* Phone */}
+          <div className="h-10 bg-gray-300 rounded w-3/4" /> 
+          <div className="h-6 bg-gray-300 rounded w-1/2" />  
+          <div className="h-6 bg-gray-300 rounded w-1/3" />  
+          <div className="h-6 bg-gray-300 rounded w-2/3" />  
+          <div className="h-6 bg-gray-300 rounded w-1/2" />  
 
           <div className="mt-4 space-y-2">
             <div className="h-4 bg-gray-300 rounded w-1/4" />
@@ -53,12 +52,10 @@ const RecipeDetail = () => {
   return (
     <div className="container mx-auto py-10 px-5 md:px-20 bg-[#fffaf4] min-h-screen">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
-        {/* Image */}
         <div>
           <img src={data.image} alt={data.name} className="w-full rounded-xl shadow-md" />
         </div>
 
-        {/* Info */}
         <div className="space-y-4 text-[#4b2e1f]">
           <h1 className="text-4xl font-bold">{data.name}</h1>
           <div className="flex flex-wrap gap-4 text-sm text-white">
