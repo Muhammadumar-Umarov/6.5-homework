@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 
-const products = () => {
+const Products = () => {
   const [data, setData] = useState(null)
   const [error, setError] = useState(null)
   const [loading, setLoading] = useState(false)
@@ -26,13 +26,11 @@ const products = () => {
   return (
     <section id="products" className="py-20 bg-white min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-[40px] font-bold text-gray-800 mb-4">Mahsulotlar Egasi</h2>
           <p className="text-lg text-gray-500">Har bir mahsulot ortida ishonchli va tajribali insonlar turadi</p>
         </div>
 
-        {/* Loading / Error */}
         {loading && (
           <div className="text-center text-blue-500 text-lg font-medium">Yuklanmoqda...</div>
         )}
@@ -40,14 +38,12 @@ const products = () => {
           <div className="text-center text-red-500">Xatolik yuz berdi: {error.message}</div>
         )}
 
-        {/* Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {data?.products?.map((product) => (
             <div
               key={product.id}
               className="bg-gray-50 border border-gray-200 rounded-2xl shadow-sm hover:shadow-lg transition duration-300 overflow-hidden"
             >
-              {/* Card Header */}
               <div className="h-48 bg-gradient-to-br from-indigo-500 to-blue-600 flex items-center justify-center p-4">
                 <img
                   src={product.images[0]}
@@ -56,7 +52,6 @@ const products = () => {
                 />
               </div>
 
-              {/* Card Body (Products uchun moslashtirilgan) */}
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 text-center mb-1">{product.title}</h3>
                 <p className="text-sm text-gray-500 text-center italic mb-4">{product.category}</p>
@@ -88,4 +83,4 @@ const products = () => {
   )
 }
 
-export default products
+export default Products
