@@ -1,10 +1,13 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const Recipe = () => {
   const [data, setData] = useState(null)
   const [error, setError] = useState(null)
   const [loading, setLoading] = useState(false)
+  const navigate = useNavigate()
+
 
   useEffect(() => {
     setLoading(true)
@@ -37,14 +40,14 @@ const Recipe = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {data?.recipes?.map(item => (
             <div key={item.id} className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden">
-              {/* Image */}
+              
               <img
                 src={item.image}
-                alt={item.name}
+                alt={item.name} onClick={() => navigate(`/recipe/${item.id}`)}
                 className="w-full h-52 object-cover object-center transition-transform duration-300 hover:scale-105"
               />
 
-              {/* Content */}
+             
               <div className="p-5">
                 <h3 className="text-2xl font-bold text-gray-800 mb-2 line-clamp-1">{item.name}</h3>
                 <p className="text-sm text-gray-600 mb-4 line-clamp-2">

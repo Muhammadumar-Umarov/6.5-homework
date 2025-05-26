@@ -45,7 +45,7 @@ const Products = () => {
               className="bg-gray-50 border border-gray-200 rounded-2xl shadow-sm hover:shadow-lg transition duration-300 overflow-hidden"
             >
               <div className="h-48 bg-gradient-to-br from-indigo-500 to-blue-600 flex items-center justify-center p-4">
-                <img src={product.thumbnail} alt={`${product.firstName}`} onClick={()=> navigate(`/users/${product.id}`)} className="w-full h-full  rounded-full  object-contain "
+                <img src={product.thumbnail} alt={`${product.firstName}`} onClick={()=> navigate(`/products/${product.id}`)} className="w-full h-full  rounded-full  object-contain "
                 />
               </div>
 

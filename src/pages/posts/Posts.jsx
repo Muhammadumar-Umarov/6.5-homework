@@ -1,10 +1,12 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const Posts = () => {
   const [data, setData] = useState([])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
+  const navigate = useNavigate()
 
   useEffect(() => {
     setLoading(true)
@@ -33,6 +35,7 @@ const Posts = () => {
           {data?.map(post => (
             <div
               key={post.id}
+              onClick={()=> navigate(`${post.id}`)}
               className="bg-gray-800 border border-gray-700 rounded-2xl p-6 shadow-lg hover:shadow-xl transition duration-300"
             >
               <h3 className="text-xl font-semibold text-white mb-2 line-clamp-2 h-[56px]">{post.title}</h3>
