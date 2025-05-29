@@ -19,9 +19,9 @@ const ProductDetail = () => {
 
 
   return (
-    <div className='grid grid-cols-2 h-screen '>
+    <div className='grid grid-cols-2 h-screen container mx-auto'>
       <div>
-        <img className='max-w-[600px] w-full' src={data?.images[0]} alt="" />
+        <img className=' w-full' src={data?.images[0]} alt="" />
       </div>
       <div className='pt-[40px]'>
         <h2 className='text-[36px] font-semibold'>{data?.title}</h2>

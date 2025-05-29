@@ -11,9 +11,11 @@ const Products = () => {
   useEffect(() => {
     setLoading(true)
     axios
-      .get("https://dummyjson.com/product")
+      .get('https://dummyjson.com/products')
       .then(res => {
         setData(res.data)
+        console.log(res.data);
+        
       })
       .catch((err) => {
         setError(err)
